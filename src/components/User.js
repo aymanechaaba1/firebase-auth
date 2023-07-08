@@ -1,4 +1,4 @@
-export default function User({ displayName, email, photoURL, uid }) {
+export default function User({ uid, displayName, email, photoURL }) {
   return `
     <div class="hidden" data-uid="${uid}"></div>
     <div class="flex-1">

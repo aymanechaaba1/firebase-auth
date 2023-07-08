@@ -1,26 +1,26 @@
 'use strict';
 
 import User from './components/User.js';
-import { btnsContainer, headerEl } from './dom.js';
+import { app, btnSign, header, signIn } from './dom.js';
 import { auth, onAuthStateChanged } from './firebase.js';
-import { loginHandler, logoutHandler } from './handlers.js';
-import { update } from './helpers.js';
+import { singInHandler, signOutHandler } from './handlers.js';
+import { clear, render, update } from './helpers.js';
 
 onAuthStateChanged(auth, (user) => {
-  if (!user) {
-    update(headerEl, '');
-    // show login btn & hide logout btn
-    btnsContainer.querySelector('.btn-login').classList.remove('hidden');
-    btnsContainer.querySelector('.btn-logout').classList.add('hidden');
+  if (user) {
+    // show app
+    signIn.classList.add('hidden');
+    clear(header);
+    render(User({ ...user }), header);
+    app.classList.remove('hidden');
   }
 
-  if (user) {
-    update(headerEl, User({ ...user }));
-    // show logout btn & hide login btn
-    btnsContainer.querySelector('.btn-login').classList.add('hidden');
-    btnsContainer.querySelector('.btn-logout').classList.remove('hidden');
+  if (!user) {
+    // hide app & show login page
+    app.classList.add('hidden');
+    signIn.classList.remove('hidden');
   }
 });
 
-btnsContainer.addEventListener('click', loginHandler);
-btnsContainer.addEventListener('click', logoutHandler);
+btnSign.addEventListener('click', singInHandler);
+header.addEventListener('click', signOutHandler);

@@ -21,5 +21,5 @@ export const load = (LoadingMarkup, parent, length = 2) => {
 
 export const update = (parent, newMarkup) => {
   clear(parent);
-  parent.innerHTML = newMarkup;
+  render(newMarkup, parent);
 };

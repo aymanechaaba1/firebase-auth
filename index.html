@@ -4,24 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script defer type="module" src="src/app.js"></script>
     <title>Firebase Auth</title>
   </head>
   <body>
-    <div id="app">
+    <div id="app" class="w-full h-screen hidden">
       <header class="header flex items-center p-4"></header>
-      <div class="btns grid gap-4 place-items-center">
-        <button
-          class="btn-logout bg-red-500 py-2 px-5 rounded-md text-white my-10 hidden"
-        >
-          Logout
-        </button>
-        <button
-          class="btn-login bg-blue-500 py-2 px-5 rounded-md text-white my-10"
-        >
-          Login
-        </button>
-      </div>
+      <h1 class="text-2xl text-center mt-20">App</h1>
+    </div>
+    <div id="signin" class="w-full h-screen grid place-content-center">
+      <button
+        class="btn-signin bg-blue-500 space-x-3 rounded-md py-2 px-5 shadow-md text-white"
+      >
+        <ion-icon class="align-middle text-xl" name="logo-google"></ion-icon>
+        <span>Sign In with Google</span>
+      </button>
     </div>
   </body>
 </html>

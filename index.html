@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer type="module" src="src/app.js"></script>
+    <title>Firebase Auth</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="header flex items-center p-4"></header>
+      <div class="btns grid gap-4 place-items-center">
+        <button
+          class="btn-logout bg-red-500 py-2 px-5 rounded-md text-white my-10 hidden"
+        >
+          Logout
+        </button>
+        <button
+          class="btn-login bg-blue-500 py-2 px-5 rounded-md text-white my-10"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

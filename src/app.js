@@ -56,7 +56,7 @@ onAuthStateChanged(auth, (user) => {
           id: doc.id,
           ...doc.data(),
         }));
-        console.log(todos);
+
         const Todos = todos
           .map((todo) =>
             Todo({
@@ -65,6 +65,7 @@ onAuthStateChanged(auth, (user) => {
             })
           )
           .join('');
+
         clear(todosContainer);
         render(Todos, todosContainer);
       }

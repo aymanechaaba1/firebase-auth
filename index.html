@@ -3,24 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
-
     <script
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script defer type="module" src="src/app.js"></script>
     <title>Firebase Auth</title>
   </head>
   <body>
     <div id="app" class="w-full h-screen hidden">
       <header class="header flex items-center p-4"></header>
-      <h1 class="text-2xl text-center mt-20">App</h1>
+      <form
+        class="form flex border rounded-full py-2 pl-10 pr-5 max-w-2xl mx-auto"
+      >
+        <input
+          type="text"
+          placeholder="Add Todo..."
+          class="input flex-1 outline-none"
+          name="todo"
+        />
+
+        <button type="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+            />
+          </svg>
+        </button>
+      </form>
+      <div
+        class="todos space-y-4 py-4 px-8 m-4 overflow-y-scroll h-3/4 max-w-2xl mx-auto"
+      ></div>
     </div>
     <div id="signin" class="w-full h-screen grid place-content-center">
       <button

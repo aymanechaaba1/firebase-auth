@@ -9,6 +9,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js';
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBLru6dre6OVCWdjzd1k7Jm0oKDOvOwa8M',
@@ -21,14 +22,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const user = auth.currentUser;
-const googleProvider = new GoogleAuthProvider();
+const db = getFirestore(app);
 
-export {
-  auth,
-  signInWithPopup,
-  googleProvider,
-  signOut,
-  onAuthStateChanged,
-  user,
-};
+export { auth, db };

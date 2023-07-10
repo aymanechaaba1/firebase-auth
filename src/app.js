@@ -60,9 +60,8 @@ onAuthStateChanged(auth, (user) => {
         const Todos = todos
           .map((todo) =>
             Todo({
-              id: todo.id,
-              todo: todo.todo,
               timestamp: todo?.timestamp?.toDate(),
+              ...todo,
             })
           )
           .join('');
